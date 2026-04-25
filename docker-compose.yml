@@ -1,0 +1,21 @@
+services:
+  db:
+    image: postgres:16
+    container_name: autoconfig_db
+    environment:
+      POSTGRES_DB: autoconfig
+      POSTGRES_USER: autoconfig
+      POSTGRES_PASSWORD: autoconfig
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7
+    container_name: autoconfig_redis
+    ports:
+      - "6379:6379"
+
+volumes:
+  pgdata:
