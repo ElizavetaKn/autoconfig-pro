@@ -1,0 +1,621 @@
+.page {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top center, var(--accent-soft-2), transparent 28%),
+    var(--bg-color);
+  color: var(--text-color);
+}
+
+.shell {
+  width: min(1280px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 26px 0 48px;
+}
+
+.header {
+  padding: 18px 0 10px;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(40px, 5vw, 66px);
+  line-height: 0.96;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text-color);
+}
+
+.subtitle {
+  margin: 14px 0 0;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.tabs {
+  display: flex;
+  gap: 12px;
+  margin-top: 26px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--accent-border-soft);
+}
+
+.tab {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--text-muted);
+  font: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 0 2px 12px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: 0.2s ease;
+}
+
+.tab:hover {
+  color: var(--text-color);
+}
+
+.tabActive {
+  color: var(--accent-color);
+  border-bottom-color: var(--accent-color);
+}
+
+.errorBox,
+.successBox,
+.loading,
+.emptyState {
+  border-radius: 20px;
+  padding: 16px 18px;
+  margin-top: 18px;
+  border: 1px solid transparent;
+}
+
+.errorBox {
+  color: var(--danger-text);
+  background: var(--danger-bg);
+  border-color: var(--danger-border);
+}
+
+.successBox {
+  color: var(--success-text);
+  background: var(--success-bg);
+  border-color: var(--success-border);
+}
+
+.loading,
+.emptyState {
+  color: var(--text-muted);
+  background: var(--surface-soft);
+  border-color: var(--accent-border-soft);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 380px minmax(0, 1fr);
+  gap: 28px;
+  margin-top: 26px;
+  align-items: start;
+}
+
+.editorColumn,
+.listColumn {
+  display: grid;
+  gap: 18px;
+}
+
+.editorCard,
+.card {
+  background: linear-gradient(180deg, var(--surface-color), var(--surface-soft));
+  border: 1px solid var(--accent-border-soft);
+  border-radius: 24px;
+  box-shadow: 0 18px 46px var(--shadow-color);
+}
+
+.editorCard {
+  padding: 18px;
+}
+
+.sectionHead,
+.listToolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.sectionHead {
+  margin-bottom: 14px;
+}
+
+.sectionTitle {
+  margin: 0;
+  font-size: 22px;
+  line-height: 1.1;
+  font-weight: 800;
+  color: var(--text-color);
+}
+
+.listToolbarRight {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.searchInput {
+  width: min(420px, 100%);
+  min-height: 44px;
+  border-radius: 14px;
+  border: 1px solid var(--accent-border);
+  background: var(--input-bg);
+  color: var(--input-text);
+  padding: 0 14px;
+  font: inherit;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.searchInput:focus,
+.input:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.searchInput::placeholder,
+.input::placeholder {
+  color: var(--text-muted-3);
+}
+
+.editorForm {
+  display: grid;
+  gap: 14px;
+}
+
+.editorGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.field {
+  display: grid;
+  gap: 7px;
+}
+
+.field span {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent-color);
+}
+
+.input {
+  width: 100%;
+  min-height: 46px;
+  border-radius: 14px;
+  border: 1px solid var(--accent-border);
+  background: var(--input-bg);
+  color: var(--input-text);
+  padding: 0 14px;
+  font: inherit;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.checkboxField {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 46px;
+  border-radius: 14px;
+  border: 1px solid var(--accent-border-soft);
+  background: var(--surface-soft-3);
+  padding: 0 14px;
+  color: var(--text-color);
+}
+
+.checkboxField input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--accent-color);
+}
+
+.formActions {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.primaryButton,
+.secondaryButton,
+.actionButton,
+.deleteButton,
+.inlineButton,
+.inlineDelete,
+.fileUploadButton {
+  appearance: none;
+  border-radius: 14px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.primaryButton {
+  min-height: 48px;
+  padding: 0 20px;
+  border: 0;
+  background: var(--accent-strong);
+  color: var(--text-on-accent);
+}
+
+.primaryButton:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px var(--accent-shadow, rgba(0, 255, 234, 0.18));
+}
+
+.primaryButton:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.secondaryButton {
+  min-height: 40px;
+  padding: 0 14px;
+  background: var(--surface-color);
+  border: 1px solid var(--accent-border);
+  color: var(--accent-color);
+}
+
+.secondaryButton:hover,
+.actionButton:hover,
+.inlineButton:hover {
+  background: var(--surface-hover);
+  border-color: var(--accent-color);
+}
+
+.selectedPartHint {
+  margin-bottom: 14px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: var(--surface-soft-3);
+  border: 1px solid var(--accent-border);
+  color: var(--text-color);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.fitmentsPreviewBox {
+  margin-bottom: 14px;
+  padding: 14px;
+  border-radius: 16px;
+  background: var(--surface-soft-3);
+  border: 1px solid var(--accent-border-soft);
+}
+
+.fitmentsPreviewTitle {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent-color);
+  margin-bottom: 8px;
+}
+
+.fitmentsPreviewRow {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-muted);
+  padding: 5px 0;
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.card {
+  padding: 16px;
+  position: relative;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.cardSelected {
+  border-color: var(--accent-color);
+  box-shadow:
+    0 18px 46px var(--shadow-color),
+    0 0 0 1px var(--accent-color),
+    0 0 28px var(--accent-soft-2);
+}
+
+.cardSelected::before {
+  content: "Выбрана для совместимости";
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-border);
+  color: var(--accent-color);
+  font-size: 11px;
+  font-weight: 700;
+  max-width: calc(100% - 24px);
+  white-space: nowrap;
+}
+
+.cardTitle {
+  margin: 0 0 10px;
+  padding-right: 120px;
+  font-size: 22px;
+  line-height: 1.14;
+  font-weight: 800;
+  color: var(--text-color);
+  overflow-wrap: anywhere;
+}
+
+.cardMeta {
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 1.45;
+  margin-top: 3px;
+}
+
+.cardPrice {
+  margin-top: 12px;
+  font-size: 26px;
+  line-height: 1;
+  font-weight: 800;
+  color: var(--accent-color);
+}
+
+.cardActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+  align-items: stretch;
+}
+
+.actionButton,
+.deleteButton {
+  min-height: 40px;
+  min-width: 0;
+  max-width: 100%;
+  padding: 0 12px;
+  border: 1px solid var(--accent-border);
+  background: var(--surface-soft-3);
+  color: var(--accent-color);
+  white-space: nowrap;
+  flex: 1 1 130px;
+}
+
+.deleteButton {
+  border-color: var(--danger-border);
+  background: var(--danger-bg);
+  color: var(--danger-text);
+  flex: 0 1 120px;
+}
+
+.deleteButton:hover,
+.inlineDelete:hover {
+  opacity: 0.92;
+}
+
+.fitmentsBox {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--accent-border-soft);
+}
+
+.fitmentsTitle {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.fitmentRow {
+  display: grid;
+  gap: 8px;
+  padding: 11px 0;
+  border-top: 1px solid var(--line-color-soft);
+}
+
+.fitmentRow:first-of-type {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.fitmentText {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.fitmentActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.inlineButton,
+.inlineDelete {
+  min-height: 34px;
+  padding: 0 12px;
+  font-size: 13px;
+  min-width: 0;
+  max-width: 100%;
+  white-space: nowrap;
+}
+
+.inlineButton {
+  background: var(--surface-soft-3);
+  border: 1px solid var(--accent-border);
+  color: var(--accent-color);
+}
+
+.inlineDelete {
+  background: var(--danger-bg);
+  border: 1px solid var(--danger-border);
+  color: var(--danger-text);
+}
+
+.fileUploadBox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.fileInputHidden {
+  display: none;
+}
+
+.fileUploadButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 0 14px;
+  border: 1px solid var(--accent-border-strong);
+  background: var(--accent-soft);
+  color: var(--accent-color);
+}
+
+.fileUploadButton:hover {
+  background: var(--surface-hover);
+  border-color: var(--accent-color);
+}
+
+.fileUploadHint {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.partImagePreviewWrap {
+  display: grid;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.partImagePreview,
+.partThumb {
+  width: 100%;
+  object-fit: contain;
+  border-radius: 14px;
+  border: 1px solid var(--accent-border);
+  background:
+    radial-gradient(circle at 50% 50%, var(--accent-soft), transparent 36%),
+    var(--surface-soft-3);
+}
+
+.partImagePreview {
+  max-width: 260px;
+  height: 160px;
+  padding: 10px;
+}
+
+.partThumbWrap {
+  margin-bottom: 14px;
+}
+
+.partThumb {
+  height: 148px;
+  padding: 10px;
+}
+
+@media (max-width: 1180px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .cardsGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .listToolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .listToolbarRight {
+    justify-content: stretch;
+  }
+
+  .searchInput {
+    width: 100%;
+  }
+
+  .cardActions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .actionButton,
+  .deleteButton {
+    width: 100%;
+    flex: initial;
+  }
+}
+
+@media (max-width: 860px) {
+  .shell {
+    width: min(100% - 24px, 1280px);
+    padding-bottom: 36px;
+  }
+
+  .editorGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .cardsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .title {
+    font-size: 42px;
+  }
+
+  .cardTitle {
+    padding-right: 0;
+  }
+
+  .cardSelected::before {
+    position: static;
+    display: inline-flex;
+    margin-bottom: 12px;
+  }
+
+  .cardActions {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .sectionHead {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cardActions,
+  .fitmentActions,
+  .formActions,
+  .listToolbarRight {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .primaryButton,
+  .secondaryButton,
+  .actionButton,
+  .deleteButton,
+  .inlineButton,
+  .inlineDelete,
+  .searchInput {
+    width: 100%;
+  }
+}

@@ -1,0 +1,273 @@
+.wrapper {
+  display: grid;
+  gap: 14px;
+  width: 100%;
+}
+
+.helperOk,
+.helperWarn {
+  padding: 12px 14px;
+  border-radius: 14px;
+  font-size: 13px;
+  line-height: 1.55;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.helperOk {
+  border: 1px solid rgba(25, 229, 223, 0.28);
+  background: var(--accent-soft-3);
+  color: var(--text-color);
+}
+
+.helperWarn {
+  border: 1px solid rgba(255, 196, 92, 0.24);
+  background: rgba(88, 58, 10, 0.18);
+  color: var(--text-color);
+}
+
+.primaryActions {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.primaryButton,
+.buyNowLink,
+.submitButton {
+  min-height: 48px;
+  border-radius: 12px;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.primaryButton {
+  border: none;
+  background: var(--accent-strong);
+  color: var(--text-on-accent);
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.primaryButton:hover {
+  background: var(--accent-color);
+}
+
+.buyNowLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--accent-border-strong);
+  background: transparent;
+  color: var(--accent-strong);
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.buyNowLink:hover {
+  background: rgba(0, 255, 234, 0.05);
+}
+
+.linksRow {
+  display: grid;
+  gap: 8px;
+}
+
+.linkButton {
+  width: fit-content;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #aaf8f4;
+  font-size: 14px;
+  line-height: 1.4;
+  text-align: left;
+  cursor: pointer;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.linkButton:hover {
+  color: var(--accent-color);
+}
+
+.statusText {
+  color: var(--text-color);
+  font-size: 13px;
+  line-height: 1.55;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 118px 24px 32px;
+  background: rgba(1, 4, 8, 0.97);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+}
+
+.modalCard {
+  position: relative;
+  isolation: isolate;
+  border: 1px solid var(--accent-border);
+  border-radius: 22px;
+  background: #031018;
+  box-shadow:
+    0 32px 90px rgba(0, 0, 0, 0.68),
+    0 0 0 1px rgba(0, 255, 234, 0.05);
+  overflow-y: auto;
+}
+
+.instructionsModal {
+  width: min(700px, calc(100vw - 48px));
+  max-height: calc(100vh - 160px);
+  padding: 22px 22px 20px;
+}
+
+.formModal {
+  width: min(560px, calc(100vw - 48px));
+  max-height: calc(100vh - 170px);
+  padding: 22px 22px 20px;
+}
+
+.modalCard::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modalCard::-webkit-scrollbar-thumb {
+  background: rgba(25, 229, 223, 0.22);
+  border-radius: 999px;
+}
+
+.modalHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.modalTitle {
+  color: var(--text-color);
+  font-size: 22px;
+  line-height: 1.1;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.closeButton {
+  flex: 0 0 auto;
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--accent-border);
+  border-radius: 10px;
+  background: #07141c;
+  color: var(--text-color);
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.closeButton:hover {
+  background: var(--accent-soft);
+}
+
+.instructionsList {
+  margin: 18px 0 0;
+  padding-left: 24px;
+  color: var(--text-color);
+  font-size: 15px;
+  line-height: 1.8;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.instructionsList li + li {
+  margin-top: 8px;
+}
+
+.modalHint {
+  margin-top: 16px;
+  color: rgba(248, 250, 252, 0.76);
+  font-size: 13px;
+  line-height: 1.6;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+  margin-top: 14px;
+}
+
+.field span {
+  color: var(--accent-color);
+  font-size: 13px;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.select,
+.input,
+.textarea {
+  width: 100%;
+  min-height: 46px;
+  padding: 0 12px;
+  border-radius: 12px;
+  border: 1px solid var(--accent-border-strong);
+  background: #061015;
+  color: var(--text-color);
+  font-size: 14px;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.textarea {
+  min-height: 120px;
+  padding: 12px;
+  resize: vertical;
+}
+
+.submitButton {
+  margin-top: 18px;
+  border: none;
+  background: var(--accent-strong);
+  color: var(--text-on-accent);
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  width: fit-content;
+  min-width: 190px;
+  padding: 0 22px;
+}
+
+.submitButton:hover {
+  background: var(--accent-color);
+}
+
+@media (max-width: 760px) {
+  .modalOverlay {
+    padding: 92px 14px 16px;
+    align-items: flex-start;
+  }
+
+  .instructionsModal,
+  .formModal {
+    width: 100%;
+    max-height: calc(100vh - 108px);
+    padding: 18px 16px 16px;
+    border-radius: 18px;
+  }
+
+  .modalTitle {
+    font-size: 20px;
+  }
+
+  .instructionsList {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .submitButton {
+    width: 100%;
+    min-width: 0;
+  }
+}

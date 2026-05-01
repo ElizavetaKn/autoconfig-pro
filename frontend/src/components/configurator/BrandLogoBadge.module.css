@@ -1,0 +1,67 @@
+.card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 92px;
+  padding: 16px 18px;
+  border: 1px solid var(--accent-border);
+  border-radius: 18px;
+  background: rgba(4, 12, 16, 0.78);
+  box-shadow: 0 0 20px var(--accent-glow);
+}
+
+.logoWrap {
+  min-width: 88px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+}
+
+.logoSvg {
+  width: 58px;
+  height: 58px;
+}
+
+.logoSvgWide {
+  width: 88px;
+  height: 44px;
+}
+
+.genericMark {
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  border: 1px solid rgba(232, 238, 245, 0.45);
+  color: var(--text-color);
+  font-size: 20px;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.meta {
+  min-width: 0;
+}
+
+.brand {
+  color: var(--text-color);
+  font-size: 22px;
+  line-height: 1.05;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.model {
+  margin-top: 6px;
+  color: var(--accent-color);
+  font-size: 16px;
+  line-height: 1.2;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.body {
+  margin-top: 6px;
+  color: var(--text-muted-2);
+  font-size: 14px;
+  line-height: 1.4;
+  font-family: Georgia, "Times New Roman", serif;
+}

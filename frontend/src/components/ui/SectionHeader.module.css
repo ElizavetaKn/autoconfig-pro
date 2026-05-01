@@ -1,0 +1,40 @@
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.headerDark {
+  margin-bottom: 14px;
+}
+
+.back {
+  color: #4b5563;
+  text-decoration: none;
+}
+
+.back:hover {
+  text-decoration: underline;
+}
+
+.backDark {
+  color: var(--text-muted);
+}
+
+.backDark:hover {
+  color: var(--bg-elevated);
+}
+
+.title {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.titleDark {
+  color: var(--bg-elevated);
+  font-size: 34px;
+  letter-spacing: -0.03em;
+}

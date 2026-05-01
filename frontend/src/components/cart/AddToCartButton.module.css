@@ -1,0 +1,140 @@
+/* src/components/cart/AddToCartButton.module.css */
+.wrapper {
+  display: grid;
+  gap: 12px;
+  min-width: 320px;
+  width: min(100%, 420px);
+}
+
+.primaryButton {
+  width: 100%;
+  min-height: 68px;
+  padding: 0 24px;
+  border: none;
+  border-radius: 14px;
+  background: var(--accent-strong);
+  color: var(--text-on-accent);
+  cursor: pointer;
+  font-size: 21px;
+  font-weight: 700;
+  font-family: Georgia, "Times New Roman", serif;
+  box-shadow: 0 0 18px rgba(25, 220, 214, 0.16);
+  transition: background 0.18s ease, transform 0.18s ease;
+}
+
+.primaryButton:hover {
+  background: var(--accent-color);
+  transform: translateY(-1px);
+}
+
+.secondaryRow {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.secondaryButton,
+.linkButton {
+  min-height: 48px;
+  padding: 0 18px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-family: Georgia, "Times New Roman", serif;
+  text-align: center;
+}
+
+.secondaryButton {
+  border: 1px solid var(--accent-border-strong);
+  background: var(--surface-soft);
+  color: var(--accent-color);
+  cursor: pointer;
+}
+
+.secondaryButton:hover {
+  background: var(--accent-soft-3);
+}
+
+.linkButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--accent-border);
+  background: rgba(4, 12, 16, 0.82);
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.linkButton:hover {
+  background: var(--line-color-soft);
+}
+
+.metaRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.statusBadge,
+.statusHint {
+  min-height: 34px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 12px;
+  border-radius: 999px;
+  font-size: 14px;
+  line-height: 1;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.statusBadge {
+  border: 1px solid var(--accent-border-strong);
+  background: var(--accent-soft);
+  color: var(--accent-color);
+}
+
+.statusHint {
+  color: var(--text-muted-3);
+}
+
+.statusText {
+  color: var(--text-muted);
+  font-size: 14px;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+@media (max-width: 760px) {
+  .wrapper {
+    min-width: 100%;
+    width: 100%;
+  }
+
+  .primaryButton {
+    min-height: 58px;
+    font-size: 18px;
+  }
+
+  .secondaryRow {
+    grid-template-columns: 1fr;
+  }
+
+  .secondaryButton,
+  .linkButton {
+    width: 100%;
+  }
+
+  .metaRow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .statusBadge,
+  .statusHint {
+    justify-content: center;
+  }
+
+  .statusText {
+    text-align: center;
+  }
+}

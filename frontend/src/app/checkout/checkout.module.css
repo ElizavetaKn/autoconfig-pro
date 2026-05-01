@@ -1,0 +1,288 @@
+.page {
+  min-height: 100vh;
+  padding: 0 0 42px;
+  background:
+    radial-gradient(circle at 72% 20%, var(--accent-soft-2), transparent 18%),
+    radial-gradient(circle at 22% 78%, var(--accent-soft), transparent 18%),
+    var(--bg-color);
+}
+
+.hero {
+  margin-top: 18px;
+}
+
+.kicker {
+  color: var(--accent-color);
+  font-size: 14px;
+  line-height: 1.2;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.title {
+  margin: 14px 0 0;
+  color: var(--text-color);
+  font-size: clamp(40px, 5vw, 62px);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.subtitle {
+  max-width: 760px;
+  margin: 18px 0 0;
+  color: var(--text-muted);
+  font-size: 18px;
+  line-height: 1.55;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.stepActive {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  padding: 0 14px;
+  border-radius: 999px;
+  border: 1px solid var(--accent-border);
+  background: var(--surface-soft-3);
+  color: var(--accent-color);
+  font-size: 15px;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.formColumn {
+  display: grid;
+  gap: 16px;
+}
+
+.blockCard,
+.summaryCard {
+  border: 1px solid var(--accent-border);
+  border-radius: 20px;
+  background: var(--surface-soft);
+  box-shadow: 0 0 22px var(--accent-glow);
+}
+
+.blockCard {
+  padding: 18px 20px;
+}
+
+.blockTitle,
+.summaryTitle {
+  color: var(--text-color);
+  font-size: 24px;
+  line-height: 1.1;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.field span {
+  color: var(--accent-color);
+  font-size: 15px;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 14px;
+  border-radius: 12px;
+  border: 1px solid var(--accent-border-strong);
+  background: var(--input-bg);
+  color: var(--input-text);
+  font-size: 16px;
+  font-family: Georgia, "Times New Roman", serif;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: var(--text-muted-3);
+}
+
+.textarea {
+  min-height: 110px;
+  padding: 14px;
+  resize: vertical;
+}
+
+.field small,
+.errorText {
+  color: var(--danger-text);
+  font-size: 13px;
+  line-height: 1.4;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.choiceList {
+  display: grid;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.choiceButton {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  min-height: 50px;
+  padding: 0 14px;
+  border-radius: 12px;
+  border: 1px solid var(--accent-border);
+  background: var(--surface-soft-3);
+  color: var(--text-color);
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.choiceButton:hover {
+  background: var(--surface-hover);
+}
+
+.choiceButtonActive {
+  border-color: var(--accent-border-strong);
+  background: var(--accent-soft);
+  box-shadow: 0 0 0 1px var(--accent-soft-2);
+}
+
+.choiceButton b,
+.choiceButton span {
+  font-weight: 400;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.checkboxRow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-color);
+  font-size: 15px;
+  line-height: 1.5;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.checkboxRow input {
+  accent-color: var(--accent-color);
+}
+
+.summaryCard {
+  position: sticky;
+  top: 18px;
+  padding: 18px 20px;
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line-color);
+}
+
+.summaryRow span,
+.summaryRow b,
+.summaryRow strong {
+  color: var(--text-color);
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.summaryRowGrand strong {
+  color: var(--accent-color);
+  font-size: 24px;
+}
+
+.statusText {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: var(--danger-bg);
+  color: var(--danger-text);
+  font-size: 14px;
+  line-height: 1.5;
+  font-family: Georgia, "Times New Roman", serif;
+  border: 1px solid var(--danger-border);
+}
+
+.submitButton {
+  width: 100%;
+  min-height: 52px;
+  margin-top: 18px;
+  border: none;
+  border-radius: 14px;
+  background: var(--accent-strong);
+  color: var(--text-on-accent);
+  font-size: 17px;
+  font-weight: 700;
+  font-family: Georgia, "Times New Roman", serif;
+  cursor: pointer;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.submitButton:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.submitButton:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+@media (max-width: 980px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .summaryCard {
+    position: static;
+  }
+}
+
+@media (max-width: 720px) {
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+}

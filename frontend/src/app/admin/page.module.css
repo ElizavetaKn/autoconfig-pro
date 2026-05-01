@@ -1,0 +1,423 @@
+.page {
+  min-height: 100vh;
+  padding: 0 0 42px;
+  background:
+    radial-gradient(circle at 72% 20%, var(--accent-soft-2), transparent 18%),
+    radial-gradient(circle at 22% 78%, var(--accent-soft), transparent 18%),
+    var(--bg-color);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr);
+  gap: 30px;
+  margin-top: 26px;
+  align-items: start;
+}
+
+.sidebar {
+  display: grid;
+  gap: 18px;
+}
+
+.profileCard,
+.sidebarCard,
+.statCard,
+.card,
+.emptyState,
+.errorBox,
+.managerCreateSection,
+.panelCard {
+  padding: 20px;
+  border: 1px solid var(--accent-border);
+  border-radius: 20px;
+  background: var(--surface-soft);
+  box-shadow: 0 0 20px var(--accent-glow);
+}
+
+.avatar {
+  width: 84px;
+  height: 84px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(0, 255, 234, 0.44);
+  background: var(--accent-soft);
+  color: var(--text-color);
+  font-size: 30px;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.profileName {
+  margin-top: 16px;
+  color: var(--text-color);
+  font-size: 28px;
+  line-height: 1.06;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.profileRole {
+  margin-top: 10px;
+  color: var(--accent-color);
+  font-size: 14px;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.profileMeta {
+  display: grid;
+  gap: 6px;
+  margin-top: 14px;
+}
+
+.profileMeta span {
+  color: var(--text-muted-3);
+  font-size: 13px;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.profileMeta b {
+  color: var(--text-color);
+  font-size: 15px;
+  line-height: 1.45;
+  font-weight: 500;
+  font-family: Georgia, "Times New Roman", serif;
+  word-break: break-word;
+}
+
+.sidebarTitle {
+  color: var(--text-color);
+  font-size: 22px;
+  line-height: 1.1;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.metric {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 12px;
+  margin-top: 12px;
+  border-top: 1px solid var(--line-color);
+}
+
+.metric span {
+  color: var(--text-muted-2);
+  font-size: 14px;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.metric b {
+  color: var(--accent-color);
+  font-size: 20px;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.content {
+  min-width: 0;
+}
+
+.header {
+  margin-bottom: 22px;
+}
+
+.title {
+  margin: 0;
+  color: var(--text-color);
+  font-size: 52px;
+  line-height: 0.98;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.subtitle {
+  margin: 14px 0 0;
+  color: var(--text-muted);
+  font-size: 19px;
+  line-height: 1.45;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.tabs {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+  border-bottom: 1px solid var(--accent-border);
+}
+
+.tab {
+  min-height: 46px;
+  padding: 0 2px;
+  border: none;
+  background: transparent;
+  color: var(--text-muted-2);
+  font-size: 18px;
+  font-family: Georgia, "Times New Roman", serif;
+  cursor: pointer;
+}
+
+.tabActive {
+  color: var(--accent-color);
+  border-bottom: 2px solid var(--accent-color);
+}
+
+.loading {
+  margin: 16px 0;
+  color: var(--text-muted);
+  font-size: 16px;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.errorBox {
+  color: var(--danger-text);
+  border-color: var(--danger-border);
+  background: var(--danger-bg);
+}
+
+.overviewSection,
+.managersSection,
+.usersSection {
+  display: grid;
+  gap: 20px;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.statCard span {
+  color: var(--text-muted-2);
+  font-size: 14px;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.statCard b {
+  display: block;
+  margin-top: 10px;
+  color: var(--accent-color);
+  font-size: 32px;
+  line-height: 1;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.overviewGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.sectionTitle {
+  color: var(--text-color);
+  font-size: 28px;
+  line-height: 1.08;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.compactList {
+  display: grid;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.compactRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line-color);
+}
+
+.compactRow b {
+  color: var(--text-color);
+  font-size: 16px;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.compactRow span {
+  display: block;
+  margin-top: 4px;
+  color: var(--text-muted-2);
+  font-size: 14px;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.compactRight {
+  text-align: right;
+}
+
+.toolbarRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+}
+
+.searchInput,
+.input {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 14px;
+  border-radius: 12px;
+  border: 1px solid var(--accent-border-strong);
+  background: #061015;
+  color: var(--text-color);
+  font-size: 15px;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.searchInput {
+  max-width: 360px;
+}
+
+.managerForm {
+  display: grid;
+  grid-template-columns: 1.2fr 1.2fr 1fr auto;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.cardHead {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: start;
+}
+
+.cardTitle {
+  color: var(--text-color);
+  font-size: 24px;
+  line-height: 1.12;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.cardMeta {
+  margin-top: 8px;
+  color: var(--text-muted-2);
+  font-size: 15px;
+  line-height: 1.5;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.statusLine {
+  margin-top: 14px;
+  color: rgba(248, 250, 252, 0.76);
+  font-size: 15px;
+  line-height: 1.5;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.cardPrice,
+.statusBadge {
+  color: var(--text-color);
+  font-size: 18px;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.itemsList {
+  display: grid;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.itemRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line-color);
+  color: var(--text-color);
+  font-size: 15px;
+  line-height: 1.45;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.cardActions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+
+.primaryButton,
+.secondaryButton,
+.dangerButton {
+  min-height: 48px;
+  padding: 0 16px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-family: Georgia, "Times New Roman", serif;
+  cursor: pointer;
+}
+
+.primaryButton {
+  border: none;
+  background: var(--accent-strong);
+  color: var(--text-on-accent);
+  font-weight: 700;
+}
+
+.secondaryButton {
+  border: 1px solid var(--accent-border-strong);
+  background: rgba(4, 12, 16, 0.82);
+  color: var(--accent-color);
+}
+
+.secondaryButton:hover {
+  background: var(--accent-soft-3);
+}
+
+.dangerButton {
+  border: 1px solid rgba(255, 100, 100, 0.32);
+  background: rgba(40, 10, 10, 0.65);
+  color: #ffd6d6;
+}
+
+.emptyState {
+  color: var(--text-muted-2);
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+@media (max-width: 1280px) {
+  .managerForm {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1180px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .statsGrid,
+  .overviewGrid,
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .toolbarRow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .searchInput {
+    max-width: none;
+  }
+
+  .compactRow {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .compactRight {
+    text-align: left;
+  }
+}

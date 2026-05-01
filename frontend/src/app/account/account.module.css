@@ -1,0 +1,548 @@
+.page {
+  min-height: 100vh;
+  padding: 0 0 42px;
+  background:
+    radial-gradient(circle at 72% 20%, var(--accent-soft-2), transparent 18%),
+    radial-gradient(circle at 22% 78%, var(--accent-soft), transparent 18%),
+    var(--bg-color);
+  color: var(--text-color);
+}
+
+.header {
+  margin-top: 26px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr);
+  gap: 34px;
+  margin-top: 26px;
+  align-items: start;
+}
+
+.sidebar {
+  min-width: 0;
+}
+
+.profileCard,
+.card,
+.emptyState,
+.errorBox,
+.modalCard,
+.vehiclePreview {
+  border: 1px solid var(--accent-border);
+  border-radius: 20px;
+  background: var(--surface-soft);
+  box-shadow: 0 0 20px var(--accent-glow);
+}
+
+.profileCard {
+  padding: 24px 22px;
+}
+
+.avatarWrap {
+  display: flex;
+  justify-content: center;
+}
+
+.avatar {
+  width: 124px;
+  height: 124px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--accent-color);
+  color: var(--text-color);
+  background:
+    radial-gradient(circle at 50% 50%, var(--accent-glow), transparent 55%),
+    rgba(220, 224, 230, 0.12);
+  box-shadow: 0 0 24px var(--accent-border);
+  font-size: 42px;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.profileName {
+  margin-top: 18px;
+  color: var(--text-color);
+  font-size: 32px;
+  line-height: 1.08;
+  text-align: center;
+  font-family: Georgia, "Times New Roman", serif;
+  word-break: break-word;
+}
+
+.profileList {
+  display: grid;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.profileItem {
+  display: grid;
+  gap: 6px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line-color);
+}
+
+.profileItem:first-child {
+  padding-top: 0;
+  border-top: none;
+}
+
+.profileItem span {
+  color: var(--text-muted-3);
+  font-size: 13px;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.profileItem b {
+  color: var(--text-color);
+  font-size: 15px;
+  line-height: 1.45;
+  font-weight: 500;
+  font-family: Georgia, "Times New Roman", serif;
+  word-break: break-word;
+}
+
+.primaryButton,
+.secondaryButton,
+.actionButton,
+.cancelButton,
+.saveButton,
+.deleteButton {
+  border-radius: 14px;
+  font-family: Georgia, "Times New Roman", serif;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.primaryButton {
+  width: 100%;
+  min-height: 46px;
+  margin-top: 20px;
+  border: none;
+  background: var(--accent-strong);
+  color: var(--text-on-accent);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.primaryButton:hover {
+  transform: translateY(-1px);
+}
+
+.content {
+  min-width: 0;
+}
+
+.title {
+  margin: 0;
+  color: var(--text-color);
+  font-size: clamp(42px, 5vw, 64px);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.welcome {
+  margin: 14px 0 0;
+  color: var(--text-muted);
+  font-size: 20px;
+  line-height: 1.45;
+  font-family: Georgia, "Times New Roman", serif;
+  max-width: 900px;
+}
+
+.tabs {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--accent-border);
+  margin: 24px 0 18px;
+}
+
+.tab {
+  min-height: 46px;
+  padding: 0 2px;
+  border: none;
+  background: transparent;
+  color: var(--text-muted-2);
+  font-size: 18px;
+  font-family: Georgia, "Times New Roman", serif;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.tabActive {
+  color: var(--accent-color);
+  border-bottom: 2px solid var(--accent-color);
+}
+
+.errorBox {
+  margin-top: 18px;
+  padding: 14px 16px;
+  border-color: var(--danger-border);
+  background: var(--danger-bg);
+  color: var(--danger-text);
+  font-size: 15px;
+  line-height: 1.5;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.loading {
+  margin-top: 14px;
+  color: var(--text-muted);
+  font-size: 15px;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.card {
+  padding: 20px;
+}
+
+.cardHead {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: start;
+}
+
+.cardTitle {
+  color: var(--text-color);
+  font-size: 24px;
+  line-height: 1.12;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.cardMeta {
+  margin-top: 10px;
+  color: var(--text-muted-2);
+  font-size: 15px;
+  line-height: 1.5;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.cardPrice {
+  color: var(--text-color);
+  font-size: 24px;
+  line-height: 1;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.cardStatus {
+  margin-top: 14px;
+  color: var(--text-color);
+  font-size: 15px;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.itemsList {
+  display: grid;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.itemRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line-color);
+  color: var(--text-color);
+  font-size: 15px;
+  line-height: 1.45;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.actionButton,
+.deleteButton {
+  min-height: 44px;
+  padding: 0 14px;
+  border: 1px solid var(--accent-border-strong);
+  background: var(--surface-color);
+  color: var(--accent-color);
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.actionButton:hover,
+.deleteButton:hover {
+  background: var(--surface-hover);
+}
+
+.deleteButton {
+  border-color: var(--danger-border);
+  color: var(--danger-text);
+}
+
+.configActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.configHeadRight {
+  display: grid;
+  gap: 10px;
+  justify-items: end;
+}
+
+.inCartBadge {
+  min-height: 34px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 12px;
+  border-radius: 999px;
+  border: 1px solid var(--accent-border);
+  background: var(--accent-soft);
+  color: var(--accent-color);
+  font-size: 13px;
+  white-space: nowrap;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.statusPill {
+  min-height: 34px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 12px;
+  border-radius: 999px;
+  border: 1px solid var(--accent-border);
+  background: var(--accent-soft);
+  color: var(--accent-color);
+  font-size: 14px;
+  white-space: nowrap;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.serviceInfo {
+  margin-top: 12px;
+  color: var(--text-muted);
+  font-size: 15px;
+  line-height: 1.5;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.emptyState {
+  padding: 18px;
+  color: var(--text-muted-2);
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+}
+
+.field span {
+  color: var(--accent-color);
+  font-size: 14px;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.input {
+  width: 100%;
+  min-height: 46px;
+  padding: 0 14px;
+  border-radius: 12px;
+  border: 1px solid var(--accent-border-strong);
+  background: var(--input-bg);
+  color: var(--input-text);
+  font-size: 15px;
+  font-family: Georgia, "Times New Roman", serif;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.input:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.input::placeholder {
+  color: var(--text-muted-3);
+}
+
+.vehicleGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.vehiclePreview {
+  padding: 14px 16px;
+  color: var(--text-color);
+  font-size: 15px;
+  line-height: 1.5;
+  font-family: Georgia, "Times New Roman", serif;
+  background: var(--surface-soft-3);
+}
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 88px 24px 28px;
+  background: var(--overlay-bg);
+  backdrop-filter: blur(6px);
+  overflow-y: auto;
+}
+
+.modalCard {
+  width: min(720px, calc(100vw - 80px));
+  max-height: calc(100vh - 120px);
+  padding: 22px;
+  overflow-y: auto;
+  background: var(--surface-color);
+}
+
+.modalHeader {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.modalTitle {
+  margin: 0;
+  color: var(--text-color);
+  font-size: 30px;
+  line-height: 1.05;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.modalSubtitle {
+  margin: 10px 0 0;
+  color: var(--text-muted-2);
+  font-size: 15px;
+  line-height: 1.5;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.closeButton {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--accent-border);
+  border-radius: 12px;
+  background: var(--surface-soft-3);
+  color: var(--text-color);
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.closeButton:hover {
+  background: var(--surface-hover);
+  border-color: var(--accent-color);
+}
+
+.modalFields {
+  display: grid;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.modalActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.cancelButton {
+  min-height: 44px;
+  padding: 0 18px;
+  border: 1px solid var(--accent-border-strong);
+  background: var(--surface-color);
+  color: var(--text-color);
+  font-size: 14px;
+}
+
+.cancelButton:hover {
+  background: var(--surface-hover);
+}
+
+.saveButton {
+  min-height: 52px;
+  padding: 0 26px;
+  border: none;
+  background: var(--accent-strong);
+  color: var(--text-on-accent);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.saveButton:hover {
+  transform: translateY(-1px);
+}
+
+@media (max-width: 1180px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .cardsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .welcome {
+    font-size: 17px;
+  }
+
+  .cardHead,
+  .itemRow {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .actionButton,
+  .statusPill,
+  .deleteButton {
+    white-space: normal;
+  }
+
+  .vehicleGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .modalActions {
+    flex-direction: column-reverse;
+  }
+
+  .cancelButton,
+  .saveButton {
+    width: 100%;
+  }
+
+  .modalOverlay {
+    padding: 72px 14px 16px;
+  }
+
+  .modalCard {
+    width: min(100%, 560px);
+    max-height: calc(100vh - 88px);
+    padding: 18px;
+  }
+}

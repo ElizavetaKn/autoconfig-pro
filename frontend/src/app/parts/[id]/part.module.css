@@ -1,0 +1,474 @@
+.page {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 72% 18%, var(--accent-soft), transparent 18%),
+    radial-gradient(circle at 18% 72%, var(--accent-soft-3), transparent 18%),
+    var(--bg-color);
+  color: var(--text-color);
+}
+
+.shell {
+  width: min(1360px, calc(100% - 36px));
+  margin: 0 auto;
+  padding: 16px 0 28px;
+}
+
+.breadcrumbRow {
+  margin-bottom: 12px;
+}
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.backLink {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-size: 14px;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.backLink:hover {
+  color: var(--accent-color);
+  opacity: 0.88;
+}
+
+.breadcrumbDivider,
+.breadcrumbText,
+.breadcrumbCurrent {
+  font-size: 13px;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.breadcrumbDivider,
+.breadcrumbText {
+  color: var(--text-muted-3);
+}
+
+.breadcrumbCurrent {
+  color: var(--text-color);
+}
+
+.heroCard,
+.sectionCard,
+.metaCard,
+.photoFrame,
+.buyPanel,
+.priceBox,
+.fitmentBanner,
+.buyCompatibility,
+.quickSpec {
+  border: 1px solid var(--accent-border);
+  border-radius: 18px;
+  background: var(--surface-soft);
+  box-shadow: 0 0 18px var(--accent-glow);
+}
+
+.heroCard {
+  padding: 18px;
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: 390px minmax(0, 1fr) 320px;
+  gap: 18px;
+  align-items: start;
+}
+
+.photoPanel,
+.infoPanel,
+.buyPanel,
+.mainColumn,
+.sideColumn {
+  min-width: 0;
+}
+
+.photoFrame {
+  overflow: hidden;
+}
+
+.photoImage {
+  width: 100%;
+  height: 360px;
+  display: block;
+  object-fit: contain;
+  background:
+    radial-gradient(circle at 52% 42%, var(--accent-soft), transparent 30%),
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--surface-soft) 75%, #081720 25%) 0%,
+      var(--surface-soft-2) 100%
+    );
+}
+
+.photoPlaceholder {
+  position: relative;
+  height: 360px;
+  background:
+    radial-gradient(circle at 52% 42%, var(--accent-soft-2), transparent 28%),
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--surface-soft) 75%, #081720 25%) 0%,
+      var(--surface-soft-2) 100%
+    );
+  overflow: hidden;
+}
+
+.placeholderGlow {
+  position: absolute;
+  inset: 18% 14% 18% 14%;
+  background: radial-gradient(circle, var(--accent-border), transparent 65%);
+  filter: blur(18px);
+}
+
+.placeholderPartShape {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 230px;
+  height: 150px;
+  transform: translate(-50%, -50%);
+  border-radius: 34px;
+  background:
+    linear-gradient(
+      145deg,
+      color-mix(in srgb, var(--surface-soft) 78%, #0e1c24 22%),
+      color-mix(in srgb, var(--surface-soft-2) 82%, #07151e 18%)
+    );
+  border: 1px solid var(--accent-border-soft);
+  box-shadow:
+    0 22px 36px var(--shadow-color),
+    0 0 40px var(--accent-soft-3);
+}
+
+.placeholderPartShape::before,
+.placeholderPartShape::after {
+  content: "";
+  position: absolute;
+  background: var(--accent-soft);
+  border-radius: 999px;
+}
+
+.placeholderPartShape::before {
+  width: 170px;
+  height: 18px;
+  left: 30px;
+  top: 34px;
+}
+
+.placeholderPartShape::after {
+  width: 110px;
+  height: 18px;
+  left: 30px;
+  bottom: 34px;
+}
+
+.photoMetaGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.metaCard {
+  padding: 12px 14px;
+}
+
+.metaCard span {
+  display: block;
+  color: var(--text-muted-3);
+  font-size: 11px;
+  line-height: 1.2;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.metaCard b {
+  display: block;
+  margin-top: 7px;
+  color: var(--text-color);
+  font-size: 15px;
+  line-height: 1.35;
+  font-weight: 400;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.notifyWrap {
+  margin-top: 8px;
+}
+
+.overline {
+  color: var(--accent-color);
+  font-size: 13px;
+  line-height: 1.2;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.badge,
+.badgeAccent {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 0 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.badge {
+  border: 1px solid var(--accent-border-soft);
+  background: var(--surface-soft-3);
+  color: var(--text-muted);
+}
+
+.badgeAccent {
+  border: 1px solid var(--accent-border-strong);
+  background: var(--accent-soft);
+  color: var(--accent-color);
+}
+
+.title {
+  margin: 14px 0 0;
+  color: var(--text-color);
+  font-size: 38px;
+  line-height: 1.02;
+  font-weight: 400;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.fitmentBanner {
+  margin-top: 16px;
+  padding: 14px 16px;
+  background: var(--surface-soft-3);
+}
+
+.fitmentTitle {
+  color: var(--text-color);
+  font-size: 16px;
+  line-height: 1.1;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.fitmentText {
+  margin-top: 8px;
+  color: var(--text-color);
+  font-size: 14px;
+  line-height: 1.55;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.quickSpecs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.quickSpec {
+  padding: 12px 14px;
+}
+
+.quickSpec span {
+  display: block;
+  color: var(--text-muted-3);
+  font-size: 11px;
+  line-height: 1.2;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.quickSpec b {
+  display: block;
+  margin-top: 7px;
+  color: var(--text-color);
+  font-size: 15px;
+  line-height: 1.35;
+  font-weight: 400;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.sectionCard {
+  padding: 16px;
+  margin-top: 16px;
+}
+
+.sectionTitle {
+  margin: 0;
+  color: var(--text-color);
+  font-size: 22px;
+  line-height: 1.1;
+  font-weight: 400;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.infoRows {
+  margin-top: 10px;
+  display: grid;
+  gap: 6px;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 10px;
+  margin-top: 12px;
+}
+
+.infoGrid span {
+  font-size: 12px;
+  color: var(--text-muted-3);
+}
+
+.infoGrid b {
+  font-size: 14px;
+}
+
+.buyPanel {
+  position: sticky;
+  top: 92px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.priceBox {
+  padding: 12px 14px;
+}
+
+.priceLabel {
+  color: var(--text-muted-2);
+  font-size: 13px;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.priceValue {
+  margin-top: 6px;
+  color: var(--accent-color);
+  font-size: 30px;
+  line-height: 1;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.priceHint {
+  margin-top: 8px;
+  color: var(--text-muted-2);
+  font-size: 12px;
+  line-height: 1.45;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.buyCompatibility {
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: var(--accent-soft);
+}
+
+.buyCompatibility span {
+  display: block;
+  color: var(--text-muted-2);
+  font-size: 11px;
+  line-height: 1.2;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.buyCompatibility b {
+  display: block;
+  margin-top: 6px;
+  color: var(--text-color);
+  font-size: 13px;
+  line-height: 1.4;
+  font-weight: 400;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.buyPanel :global(button),
+.buyPanel :global(a) {
+  min-height: 42px !important;
+  font-size: 14px !important;
+}
+
+.lowerGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 18px;
+  margin-top: 18px;
+  align-items: start;
+}
+
+.checkList {
+  margin: 12px 0 0;
+  padding-left: 18px;
+  color: var(--text-color);
+  font-size: 15px;
+  line-height: 1.65;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.checkList li + li {
+  margin-top: 6px;
+}
+
+@media (max-width: 1280px) {
+  .heroGrid {
+    grid-template-columns: 340px minmax(0, 1fr);
+  }
+
+  .buyPanel {
+    grid-column: 1 / -1;
+    position: static;
+  }
+}
+
+@media (max-width: 980px) {
+  .heroGrid,
+  .lowerGrid,
+  .infoGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .photoMetaGrid,
+  .quickSpecs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .shell {
+    width: min(1360px, calc(100% - 22px));
+  }
+
+  .heroCard,
+  .sectionCard,
+  .buyPanel {
+    padding: 14px;
+  }
+
+  .title {
+    font-size: 30px;
+  }
+
+  .priceValue {
+    font-size: 28px;
+  }
+
+  .photoImage,
+  .photoPlaceholder {
+    height: 280px;
+  }
+
+  .photoMetaGrid,
+  .quickSpecs {
+    grid-template-columns: 1fr;
+  }
+}

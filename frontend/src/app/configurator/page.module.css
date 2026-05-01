@@ -1,0 +1,555 @@
+.page {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 70% 16%, var(--accent-soft), transparent 22%),
+    radial-gradient(circle at 18% 74%, var(--accent-soft-3), transparent 20%),
+    var(--bg-color);
+  padding-bottom: 10px;
+}
+
+.shell {
+  width: min(1360px, calc(100% - 22px));
+  margin: 0 auto;
+  padding-top: 4px;
+}
+
+.errorBox {
+  margin-top: 8px;
+  padding: 10px 12px;
+  border: 1px solid var(--danger-border);
+  border-radius: 12px;
+  background: var(--danger-bg);
+  color: var(--danger-text);
+  font-size: 13px;
+  line-height: 1.4;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.configuratorFrame {
+  display: grid;
+  grid-template-rows: auto auto auto auto auto;
+  gap: 8px;
+  min-height: calc(100vh - 86px);
+  padding-top: 4px;
+}
+
+.stepsRow {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 4px;
+  align-items: center;
+}
+
+.stepButton {
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.stepCircle {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 1px solid var(--accent-border);
+  display: grid;
+  place-items: center;
+  color: var(--accent-border-strong);
+  background: var(--surface-soft-3);
+  font-size: 16px;
+  line-height: 1;
+  font-family: Georgia, "Times New Roman", serif;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.stepCircleActive {
+  color: var(--text-on-accent);
+  background: var(--accent-strong);
+  border-color: var(--accent-strong);
+  box-shadow: 0 0 10px var(--accent-soft-2);
+}
+
+.stepCirclePassed {
+  color: var(--accent-color);
+  border-color: var(--accent-border-strong);
+}
+
+.stepLabel {
+  color: var(--text-muted-2);
+  font-size: 13px;
+  line-height: 1.05;
+  font-family: Georgia, "Times New Roman", serif;
+  text-align: center;
+}
+
+.stepLabelActive {
+  color: var(--accent-color);
+}
+
+.mainRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1.78fr) minmax(360px, 0.9fr);
+  gap: 12px;
+  align-items: stretch;
+  height: clamp(470px, 57vh, 620px);
+  min-height: 470px;
+}
+
+.sceneColumn,
+.optionsColumn {
+  min-height: 0;
+}
+
+.sceneColumn {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: 6px;
+}
+
+.vehicleTop {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 0 2px;
+}
+
+.brandTitle {
+  color: var(--accent-color);
+  font-size: 24px;
+  line-height: 1;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.modelLine {
+  margin-top: 4px;
+  color: var(--text-color);
+  font-size: 14px;
+  line-height: 1.2;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.sceneHint {
+  color: var(--text-muted-2);
+  font-size: 12px;
+  line-height: 1.2;
+  text-align: right;
+  font-family: Georgia, "Times New Roman", serif;
+  white-space: nowrap;
+}
+
+.viewerCard {
+  min-height: 0;
+  height: 100%;
+  border-radius: 18px;
+  border: 1px solid var(--accent-border-soft);
+  background:
+    radial-gradient(circle at 50% 68%, var(--accent-soft-2), transparent 22%),
+    radial-gradient(circle at 50% 30%, var(--accent-soft-3), transparent 34%),
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--surface-soft) 78%, var(--text-on-accent) 22%) 0%,
+      var(--bg-elevated) 100%
+    );
+  overflow: hidden;
+}
+
+.viewerWrap {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+}
+
+.sceneLoading {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  color: var(--text-muted-2);
+  font-size: 14px;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.optionsColumn {
+  border-radius: 18px;
+  border: 1px solid var(--accent-border);
+  background: var(--surface-soft);
+  overflow: hidden;
+  min-height: 0;
+  height: 100%;
+}
+
+.optionsScroll {
+  height: 100%;
+  max-height: 100%;
+  overflow-y: auto;
+  padding: 14px 14px 12px;
+  scrollbar-width: thin;
+  display: flex;
+  flex-direction: column;
+}
+
+.optionsScroll::-webkit-scrollbar {
+  width: 7px;
+}
+
+.optionsScroll::-webkit-scrollbar-thumb {
+  background: var(--accent-soft-2);
+  border-radius: 999px;
+}
+
+.panelTitle {
+  color: var(--accent-color);
+  font-size: 16px;
+  line-height: 1.1;
+  letter-spacing: 0.03em;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.field {
+  display: grid;
+  gap: 7px;
+  margin-top: 12px;
+}
+
+.field span,
+.sectionLabel {
+  color: var(--accent-color);
+  font-size: 13px;
+  line-height: 1.1;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.select {
+  width: 100%;
+  min-height: 44px;
+  padding: 0 13px;
+  border-radius: 12px;
+  border: 1px solid var(--accent-border-strong);
+  background: var(--input-bg);
+  color: var(--input-text);
+  font-size: 14px;
+  font-family: Georgia, "Times New Roman", serif;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.select:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.choiceList {
+  display: grid;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.choiceCard {
+  padding: 11px 12px 10px;
+  border-radius: 14px;
+  border: 1px solid var(--accent-border);
+  background: var(--surface-soft-3);
+  color: var(--text-color);
+  text-align: left;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.choiceCard:hover {
+  background: var(--surface-hover);
+}
+
+.choiceCardActive {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 1px var(--accent-soft-2);
+}
+
+.choiceTitle {
+  font-size: 15px;
+  line-height: 1.2;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.choiceMeta {
+  margin-top: 4px;
+  color: var(--text-muted-2);
+  font-size: 12px;
+  line-height: 1.25;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.choicePrice {
+  margin-top: 6px;
+  color: var(--accent-color);
+  font-size: 12px;
+  line-height: 1.25;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.paintList {
+  display: grid;
+  gap: 7px;
+  margin-top: 10px;
+}
+
+.paintButton {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 38px;
+  padding: 0 12px;
+  border-radius: 12px;
+  border: 1px solid var(--accent-border);
+  background: var(--surface-soft-3);
+  color: var(--text-color);
+  cursor: pointer;
+  font-size: 13px;
+  font-family: Georgia, "Times New Roman", serif;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.paintButton:hover {
+  background: var(--surface-hover);
+}
+
+.paintButtonActive {
+  border-color: var(--accent-color);
+}
+
+.paintDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.32);
+}
+
+.toggles {
+  display: grid;
+  gap: 9px;
+  margin-top: 12px;
+}
+
+.toggleRow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--text-color);
+  font-size: 13px;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.toggleRow input {
+  width: 15px;
+  height: 15px;
+  accent-color: var(--accent-color);
+}
+
+.panelNav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid var(--accent-soft-2);
+}
+
+.panelNavGhost,
+.panelNavPrimary {
+  min-height: 44px;
+  border-radius: 12px;
+  font-size: 14px;
+  line-height: 1.1;
+  font-family: Georgia, "Times New Roman", serif;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.panelNavGhost {
+  border: 1px solid var(--accent-border);
+  background: var(--surface-soft);
+  color: var(--accent-color);
+}
+
+.panelNavGhost:hover {
+  background: var(--surface-hover);
+}
+
+.panelNavPrimary {
+  border: none;
+  background: var(--accent-strong);
+  color: var(--text-on-accent);
+  font-weight: 700;
+}
+
+.panelNavPrimary:hover {
+  background: var(--accent-color);
+}
+
+.panelNavGhost:disabled,
+.panelNavPrimary:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.bottomBar {
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr);
+  gap: 10px;
+  align-items: center;
+}
+
+.priceBlock {
+  padding: 4px 2px;
+}
+
+.priceBlock span {
+  display: block;
+  color: var(--text-color);
+  font-size: 14px;
+  line-height: 1.1;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.priceBlock strong {
+  display: block;
+  margin-top: 4px;
+  color: var(--accent-color);
+  font-size: 18px;
+  line-height: 1;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.actionsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.actionGhost,
+.catalogButton {
+  min-height: 48px;
+  border-radius: 13px;
+  font-size: 14px;
+  line-height: 1.1;
+  font-family: Georgia, "Times New Roman", serif;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.actionGhost,
+.catalogButton {
+  border: 1px solid var(--accent-border);
+  background: var(--surface-soft);
+  color: var(--accent-color);
+}
+
+.actionGhost:hover,
+.catalogButton:hover {
+  background: var(--surface-hover);
+}
+
+.catalogRow {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.catalogButton {
+  min-height: 40px;
+  border-radius: 12px;
+}
+
+.statusText {
+  color: var(--text-muted);
+  font-size: 12px;
+  line-height: 1.25;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+@media (max-width: 1280px) {
+  .mainRow {
+    grid-template-columns: minmax(0, 1.6fr) minmax(330px, 0.95fr);
+    height: clamp(450px, 54vh, 580px);
+    min-height: 450px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .configuratorFrame {
+    min-height: auto;
+  }
+
+  .mainRow {
+    grid-template-columns: 1fr;
+    height: auto;
+    min-height: 0;
+  }
+
+  .sceneColumn {
+    grid-template-rows: auto 460px;
+  }
+
+  .optionsColumn {
+    min-height: 360px;
+  }
+
+  .optionsScroll {
+    max-height: 420px;
+  }
+
+  .panelNav {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .bottomBar {
+    grid-template-columns: 1fr;
+  }
+
+  .actionsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .shell {
+    width: min(1360px, calc(100% - 16px));
+  }
+
+  .stepsRow {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .sceneColumn {
+    grid-template-rows: auto 340px;
+  }
+
+  .actionsGrid,
+  .panelNav {
+    grid-template-columns: 1fr;
+  }
+
+  .sceneHint {
+    white-space: normal;
+  }
+}

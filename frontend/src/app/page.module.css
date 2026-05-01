@@ -1,0 +1,310 @@
+.page {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 73% 34%, var(--accent-border-soft), transparent 18%),
+    radial-gradient(circle at 70% 62%, var(--accent-soft), transparent 18%),
+    var(--bg-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+}
+
+.shell {
+  width: min(1360px, calc(100% - 64px));
+  margin: 0 auto;
+  padding: 34px 0 22px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(620px, 0.98fr) minmax(520px, 1.02fr);
+  align-items: center;
+  gap: 18px;
+  min-height: 470px;
+}
+
+.heroText {
+  position: relative;
+  z-index: 2;
+  max-width: 760px;
+}
+
+.title {
+  margin: 0;
+  color: var(--text-color);
+  font-size: clamp(58px, 5.1vw, 76px);
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+  font-weight: 400;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.title span {
+  display: block;
+  white-space: nowrap;
+}
+
+.subtitle {
+  max-width: 560px;
+  margin: 30px 0 0;
+  color: var(--text-muted-2);
+  font-size: 25px;
+  line-height: 1.28;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.heroActions {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 18px;
+  margin-top: 48px;
+}
+
+.primaryButton,
+.secondaryButton {
+  min-width: 294px;
+  min-height: 72px;
+  padding: 0 26px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  border: 1px solid var(--accent-color);
+  background: var(--surface-soft);
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 24px;
+  line-height: 1;
+  font-weight: 400;
+  font-family: Georgia, "Times New Roman", serif;
+  transition:
+    transform 0.18s ease,
+    border-color 0.18s ease,
+    background 0.18s ease;
+}
+
+.primaryButton:hover,
+.secondaryButton:hover {
+  transform: translateY(-1px);
+  background: var(--surface-hover);
+}
+
+.heroVisual {
+  position: relative;
+  min-height: 470px;
+  align-self: stretch;
+}
+
+.visualGlow {
+  position: absolute;
+  inset: 6% -3% 0 0;
+  background:
+    radial-gradient(circle at 55% 52%, var(--accent-border-strong), transparent 28%),
+    radial-gradient(circle at 50% 62%, var(--accent-soft-2), transparent 42%);
+  filter: blur(18px);
+  pointer-events: none;
+}
+
+.carImage {
+  position: absolute;
+  right: -8px;
+  bottom: 4px;
+  width: 112%;
+  height: 100%;
+  background-image: url("/home-car.png");
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: contain;
+}
+
+.quickGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 50px;
+  margin-top: 26px;
+}
+
+.quickCard {
+  min-height: 114px;
+  padding: 20px 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  border: 1px solid var(--accent-border);
+  border-radius: 10px;
+  background: var(--surface-soft-2);
+  box-shadow: 0 0 20px var(--accent-glow);
+  text-decoration: none;
+  transition:
+    transform 0.18s ease,
+    border-color 0.18s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease;
+}
+
+.quickCard:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-border-strong);
+  box-shadow: 0 0 26px var(--accent-soft-3);
+  background: var(--surface-hover);
+}
+
+.quickIconWrap {
+  flex: 0 0 auto;
+  color: var(--accent-color);
+}
+
+.cardIcon {
+  width: 56px;
+  height: 56px;
+  display: block;
+}
+
+.quickTitle {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  color: var(--text-color);
+  font-size: 26px;
+  line-height: 1.08;
+  font-weight: 400;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+@media (max-width: 1320px) {
+  .shell {
+    width: min(1360px, calc(100% - 40px));
+    padding-top: 28px;
+  }
+
+  .hero {
+    grid-template-columns: minmax(560px, 0.98fr) minmax(460px, 1.02fr);
+    min-height: 440px;
+  }
+
+  .title {
+    font-size: clamp(50px, 4.8vw, 68px);
+  }
+
+  .subtitle {
+    margin-top: 24px;
+    font-size: 22px;
+  }
+
+  .heroActions {
+    margin-top: 36px;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    min-width: 270px;
+    min-height: 64px;
+    font-size: 22px;
+  }
+
+  .heroVisual {
+    min-height: 440px;
+  }
+
+  .quickGrid {
+    gap: 18px;
+    margin-top: 22px;
+  }
+
+  .quickTitle {
+    font-size: 23px;
+  }
+
+  .cardIcon {
+    width: 52px;
+    height: 52px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .heroText {
+    max-width: 100%;
+  }
+
+  .title span {
+    white-space: normal;
+  }
+
+  .heroVisual {
+    min-height: 330px;
+  }
+
+  .carImage {
+    width: 100%;
+    right: 0;
+  }
+
+  .quickGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 22px;
+  }
+}
+
+@media (max-width: 720px) {
+  .shell {
+    width: min(1360px, calc(100% - 24px));
+    padding-top: 22px;
+  }
+
+  .title {
+    font-size: 42px;
+    line-height: 1;
+  }
+
+  .subtitle {
+    margin-top: 18px;
+    font-size: 17px;
+    max-width: 100%;
+  }
+
+  .heroActions {
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 24px;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+    min-width: 0;
+    min-height: 56px;
+    font-size: 18px;
+    border-radius: 14px;
+  }
+
+  .heroVisual {
+    min-height: 250px;
+  }
+
+  .quickGrid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 18px;
+  }
+
+  .quickCard {
+    min-height: 94px;
+    padding: 16px 18px;
+    justify-content: flex-start;
+    gap: 14px;
+  }
+
+  .cardIcon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .quickTitle {
+    font-size: 18px;
+  }
+}
